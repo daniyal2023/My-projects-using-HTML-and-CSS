@@ -1,0 +1,113 @@
+body {
+    background: conic-gradient(#21094E , #1E0342, #201E43, #27374D, #17153B, #071952, #332941, #21094E) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#main{
+    background: conic-gradient(#201E43 , #17153B ,#2E236C , #134B70, #201E43);
+    max-width: 700px;
+    margin: 70px auto 50px auto;
+    text-align : center;
+    border-radius: 15px;
+    padding:30px 30px 45px 30px;
+    height: 100%;
+    background-size: cover;
+    position: relative;
+}
+
+@property --angle{
+    syntax : "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+#main::after , #main::before{
+    content: '';
+    position:absolute;
+    height:100%;
+    width: 100%;
+    background: conic-gradient(from var(--angle),#ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee, #ff0000);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 10px;
+    border-radius: 15px;
+    animation: 5s spin linear infinite;
+}
+
+#main::before{
+    filter: blur(1.5em);
+    opacity: 0.6;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+#title {
+    color: #EEEEEE;
+    text-align : center;
+    font-size: 2.5em;
+    text-shadow: 4px 4px 4px #000;
+}
+
+#image {
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    border : 7px solid #508C9B
+}
+
+#img-div {
+    margin: 20px;
+    padding:5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#img-caption{
+    font-style: italic;
+    color : #EEEEEE;
+}
+
+#tribute-info{
+    padding: 15px;
+    background-color: #134B70;
+    color:#EEEEEE;
+    margin-bottom: 35px;
+    border-radius: 1em;
+    border: 7px solid #17153B;
+    background: linear-gradient(to bottom left,#134B70 , #508C9B) ;
+    font-size: 18px;
+    box-shadow: inset 0 0 20px rgba(0 , 0 , 0 , 0.8);
+}
+
+#tribute-link{
+    text-decoration: none;
+    font-size: 20px;
+    color: #EEEEEE;
+    background: linear-gradient(to bottom right,#134B70 , #508C9B) ;
+    padding: 12px;
+    margin: 25px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: background-color 0.5s , color 0.5s;
+}
+
+#tribute-link:hover {
+    background: #EEEEEE;
+    color: #508C9B;
+}
